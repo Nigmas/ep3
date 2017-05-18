@@ -1,0 +1,52 @@
+.footer {
+	height: $footHeight;
+	margin-top: -$footHeight;
+	min-width: 319px;
+
+	table {
+		margin: 20px auto;
+		width: 95%;
+	}
+
+	td {
+		vertical-align: bottom;
+		color: $grey;
+		font-size: 1.6rem;
+		font-weight: bold;
+		line-height: 2rem;
+	}
+}
+
+.footer__adress {
+
+}
+
+.footer__copyright {
+	text-align: center;
+	display: inline-block;
+	vertical-align: bottom;
+
+		@media screen and (max-width: 768px) {
+		text-align: right;
+		float: right;
+	}
+}
+
+.footer__phone {
+
+	.phone__tel {
+		float: right;
+	}
+
+	.phone {
+		a {
+			display: block;
+			color: $grey;
+			font-weight: bold;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
+}

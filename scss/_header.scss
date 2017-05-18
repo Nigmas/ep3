@@ -1,0 +1,434 @@
+.header{
+	width: 100%;
+	position: fixed;
+	background-color: #FFF;
+	height: $headerHeight;
+	border-bottom: 1px solid #d3d3d3;
+	z-index: 1000;
+	box-shadow: 0 0 5px rgba(0,0,0, .35);
+}
+
+.header__logo{
+	float: left;
+	overflow: visible;
+	position: relative;
+	z-index: 1010;
+}
+
+.header__img{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 5px;
+
+}
+
+.header__name{
+	font-family: 'Special Elite', cursive;
+	color: $blue;
+	display: inline-block;	
+	position: absolute;
+	z-index: 2;
+
+	span {
+		color: $grey;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.header__logo{
+		width: 52px;
+	}
+	.header__name{
+		font-size: 20px;
+		right: -98px;
+		top: 20px;
+	}
+	.header{
+		height: $headerHeight - 20;
+	}
+	.header__menu{
+	display: none;
+	}
+	.header__list {
+		line-height: $headerHeight - 20;
+	}
+	.header__list a {
+		font-size: 1.7rem;
+		padding: 0 15px;
+	}
+
+	.header__mobile {
+		display: block;
+		float: right;
+		height: $headerHeight - 20;
+		width: $headerHeight - 20;
+
+		position: relative;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		font-size: 0;
+		text-indent: -9999px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		box-shadow: none;
+		border-radius: none;
+		border: none;
+
+			&:focus {
+				outline: none;
+			}
+
+		span {
+		  display: block;
+		  position: absolute;
+		  top: calc(50% - 3px);
+		  left: 5px;
+		  right: 5px;
+		  height: 5px;
+		  background: #ccc;
+
+		  &::before, &::after {
+			  position: absolute;
+			  display: block;
+			  left: 0;
+			  width: 100%;
+			  height: 5px;
+			  background-color: #ccc;
+			  content: "";
+			}
+
+			&::before {
+			  top: -12px;
+			}
+
+			&::after {
+			  bottom: -12px;
+			}			
+		}
+
+
+	&__htx span {
+	  -webkit-transition: background 0 0.3s;
+	          transition: background 0 0.3s;
+	}
+
+	&__htx span::before,
+	&__htx span::after {
+	  -webkit-transition-duration: 0.3s, 0.3s;
+	          transition-duration: 0.3s, 0.3s;
+	  -webkit-transition-delay: 0.3s, 0;
+	          transition-delay: 0.3s, 0;
+	}
+
+	&__htx span::before {
+	  -webkit-transition-property: top, -webkit-transform;
+	          transition-property: top, transform;
+	}
+
+	&__htx span::after {
+	  -webkit-transition-property: bottom, -webkit-transform;
+	          transition-property: bottom, transform;
+	}
+
+	/* активное состояние*/
+	
+	&__htx.active span {
+	  background: none;
+	}
+
+	&__htx.active span::before {
+	  top: 0;
+	  -webkit-transform: rotate(45deg);
+	      -ms-transform: rotate(45deg);
+	          transform: rotate(45deg);
+	}
+
+	&__htx.active span::after {
+	  bottom: 0;
+	  -webkit-transform: rotate(-45deg);
+	      -ms-transform: rotate(-45deg);
+	          transform: rotate(-45deg);
+	}
+
+	&__htx.active span::before,
+	&__htx.active span::after {
+	  -webkit-transition-delay: 0, 0.3s;
+	          transition-delay: 0, 0.3s;
+	}
+	}
+
+
+	/* modal menu window
+	================================================================= */
+	.modalMenu {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 150vh;
+		width: 100vw;
+		min-width: 320px;
+		background-color: #ccc;
+		z-index: 900;
+		overflow: hidden;
+
+		.modalMenu__menu {
+
+			.modalMenu__list a {
+				box-sizing: border-box;
+				display: block;
+				width: 100%;
+				padding-left: 10%;
+				background-color: #fff;
+				font-size: 2rem;
+				font-weight: bold;
+				color: $grey;
+				outline: 1px solid #ccc;
+			}
+
+		}
+
+		.modalMenu__contactData {
+			box-sizing: border-box; 
+			background-color: #FFF;
+			display: block;
+			width: 100%;
+			font-size: 0;
+
+			@media screen and (max-width: 449px) {
+					.modalMenu__halfWidth {
+						width: 100%;
+					};
+				}
+
+			@media screen and (min-width: 450px) and (max-width: 769px) {
+					.modalMenu__halfWidth {
+						width: 50%;
+						display: inline-block;
+					};
+				}
+
+			a {
+				display: inline-block;
+				width: 50%;
+				height: 100%;
+				outline: 1px solid #ccc;
+				text-align: center;
+				vertical-align: top;
+				padding: auto;
+				margin: auto;
+				font-size: 14px;
+				overflow: hidden;
+				color: #ccc;
+				line-height: 16px;
+				padding: 3px 0 5px 0;
+
+				background-color: $grey;
+
+				@media screen and (min-width: 450px) and (max-width: 769px) {
+					padding-bottom: 0;
+					line-height: 14px;
+					max-height: 90px;
+				}
+
+				svg {
+					max-width: 40px;
+
+					* {
+						fill: #ccc;
+					}
+				}
+
+				span {
+					display: block;
+				}
+			}
+
+			.modalMenu__halfWidth:first-child {
+				a {
+					padding-top: 8px;
+
+					svg {
+					width: 35px;
+					margin-bottom: 4px;
+					}
+				}
+			}
+
+		}
+	}
+	/* END modal menu window
+	================================================================= */	
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+	.header__logo{
+		width: 60px;
+	}
+	.header__name{
+		font-size: 25px;
+		right: -115px;
+		top: 35px;
+	}
+	.header{
+		height: ($headerHeight - 10);
+	}
+	.header__menu{
+	display: block;
+	}
+	.header__list {
+		line-height: ($headerHeight - 10);
+	}
+	.header__list a {
+		font-size: 1.5rem;
+		padding: 0 7px;
+	}
+
+	.header__mobile, .modalMenu {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.header__logo{
+		width: 70px;
+	}
+	.header__name{
+		font-size: 25px;
+		right: -115px;
+		top: 45px;
+	}
+	.header{
+		height: $headerHeight;
+	}
+	.header__menu{
+		display: block;
+	}
+	.header__list {
+		line-height: $headerHeight;
+	}
+	.header__list a {
+		font-size: 1.7rem;
+		padding: 0 15px;
+	}
+
+	.header__mobile, .modalMenu {
+		display: none;
+	}
+}
+
+.header__menu{
+	float: right;
+}
+
+.header__list {
+	display: inline-block;
+	position: relative;	
+
+}
+
+.header__nav {
+font-size: 0;
+}
+
+
+.header__list:last-child {
+			border-right: 1px solid #d3d3d3;
+		}
+
+.header__list a {
+	color: $grey;
+	font-weight: bold;
+	display: block;
+	overflow: hidden;
+	border-left: 1px solid #d3d3d3;
+	
+
+		&:hover {
+		color: $blue;
+	}
+
+		
+		&::before {
+		position: absolute;
+		content: '';
+		width: 100%;
+		display: block;
+		height: 5px;
+		background-color: $blue;
+		transition: all .5s;
+		opacity: 0;
+		left: 0;
+		bottom: -5px;
+		overflow: hidden;
+	}
+	
+		&:hover::before {
+		opacity: 100;
+		bottom: 0;
+	}
+}
+
+/* for JS only
+=========================== */
+.focused {
+	color: $blue !important;
+}
+
+.noScroll {
+	overflow: hidden;
+	height: 100vh;
+}
+/* ======================== */
+
+.header__phone {
+	float: right;
+	overflow: hidden;
+
+	@media screen and (max-width: 768px) {
+ 		display: none;
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1199px) {
+		width: 170px;
+
+		.phone {
+			a {
+			font-size: 1.7rem;
+			margin-top: .5rem;
+			margin-right: .2rem;
+			}
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		width: 200px;
+
+		.phone {
+			a {
+			font-size: 1.7rem;
+			margin-top: .8rem;
+			margin-right: .2rem;
+			}
+		}
+
+		.phone__tel {
+			height: $headerHeight;
+		}
+	}
+
+	.phone__tel {
+		float: right;
+	}
+
+	.phone {
+		a {
+			color: $blue;
+			display: block;
+			font-weight: bold;
+		}
+	}
+}

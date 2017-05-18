@@ -1,0 +1,92 @@
+@import "_normalize";
+@import "_variables";
+@import url('https://fonts.googleapis.com/css?family=Roboto|Special+Elite');
+@import "_header";
+@import "_main";
+@import "_footer";
+
+html {
+	height: 100%;
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
+	line-height: 1.4rem;
+
+	@media screen and (max-width: 768px) {
+		font-size: 9px;
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1199px) {
+		font-size: 9.5px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		font-size: 10px;
+	}
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	background: url(../img/concrete_seamless.png) repeat;
+	overflow: auto;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.empty {
+	height: $footHeight;
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		min-width: 319px;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0 15px;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+	.container {
+		max-width: 970px;
+		margin: 0 auto;
+	    padding: 0 30px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 50px;
+	}
+
+}
+
+.container {
+	box-shadow: 3px 10px 20px rgba(0,0,0,.3);
+	background-color: #fff;
+			}
+
+.container--justMargin {
+	background-color: none;
+	margin: 0 auto;
+	padding: 0;
+	padding: 0 5px;
+	box-shadow: none;
+}
+
+.clearfix:before,
+.clearfix:after{
+  display: table;
+  content: " ";
+}
+
+.clearfix:after{
+  clear: both;
+}

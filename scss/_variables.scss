@@ -1,0 +1,45 @@
+$footHeight: 85px;
+$headerHeight: 70px;
+
+//color
+$blue: #099b9a;
+$grey: #36444d;
+
+@mixin title {
+	font-size: 3rem; 
+	color: $grey;
+	padding-top: 4rem;
+	//padding-bottom: 1rem;
+	text-indent: 0;
+	line-height: 3rem;
+
+	@media screen and (max-width: 768px) {
+		padding-top: 2rem;
+	}
+}
+
+@mixin svgSize {
+	width: 100px;
+	height: 100px;
+
+	@media screen and (max-width: 768px) {
+		width: 80px;
+		height: 80px;
+	}
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
