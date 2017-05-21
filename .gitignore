@@ -1,4 +1,6 @@
 archive/
-koala-config.json
+build/
+node_modules/
+
 robots.txt
 googlea2e8c66f5c8b6d83.html
